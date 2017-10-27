@@ -17,18 +17,10 @@ public:
 	bool init(string pathFile1 = "", string pathFile2 = "");
 	const PairFiles& getInputFiles() const;
 	void addSpacedQmer(string nametype, string spaced);
+	const vector<pair<string, SpacedQmer>>& getVSpaced() const;
 private:
 	PairFiles input_files;
 	vector<pair<string, SpacedQmer>> spaced_seed;
-};
-
-struct VParameter
-{
-public:
-	typedef shared_ptr<VParameter> Ptr;
-	vector<FileParameter> files;
-	vector<pair<string, SpacedQmer>> spaced_seed;
-	VParameter();
 };
 
 #endif /* SRC_PARAMETER_H_ */

@@ -49,7 +49,7 @@ int main(int argc, char* argv[]) {
 		else if(strcmp(argv[i], "-dirO") == 0)
 		{
 			i++;
-			if(argv[i] == "")
+			if(string(argv[i]) == "")
 			{
 				cerr<<endl<<"Enter valid path for output directory"<<flush;
 				return 0;
@@ -63,15 +63,15 @@ int main(int argc, char* argv[]) {
 
 	bool single_test_equals = false;
 	string dir_output_1 = dir_output + "single/";
-	FSH test;
-	if(test.load_sequences(param))
+	FSH test_single;
+	if(test_single.load_sequences(param))
 	{
-		for(size_t j = 0; j < param.spaced_seed.size(); ++j)
+		for(size_t j = 0; j < param.getVSpaced().size(); ++j)
 		{
-			string dir_output_tmp = dir_output_1 + param.spaced_seed[j].first +  param.spaced_seed[j].second.toString() + "/";
+			string dir_output_tmp = dir_output_1 + param.getVSpaced()[j].first +  param.getVSpaced()[j].second.toString() + "/";
 
-			test.single_run(param.spaced_seed[j].second, single_test_equals);
-			test.single_save(param, dir_output_tmp);
+			test_single.single_run(param.getVSpaced()[j].second, single_test_equals);
+			test_single.single_save(param, dir_output_tmp);
 		}
 	}
 
@@ -80,13 +80,13 @@ int main(int argc, char* argv[]) {
 	bool multi_test_equals = false;
 	string dir_output_2 = dir_output + "multi/";
 	vector<SpacedQmer> multi_spaced;
-	for(size_t i = 0; i < param.spaced_seed.size(); ++i)
-		multi_spaced.push_back(param.spaced_seed[i].second);
+	for(size_t i = 0; i < param.getVSpaced().size(); ++i)
+		multi_spaced.push_back(param.getVSpaced()[i].second);
 
-	FSH test;
-	if(test.load_sequences(param))
+	FSH test_multi;
+	if(test_multi.load_sequences(param))
 	{
-		test.multi_run(multi_spaced, multi_test_equals);
-		test.multi_save(param, multi_spaced, dir_output_2);
+		test_multi.multi_run(multi_spaced, multi_test_equals);
+		test_multi.multi_save(param, multi_spaced, dir_output_2);
 	}
 }
