@@ -35,16 +35,30 @@ int main(int argc, char* argv[]) {
 		else if(strcmp(argv[i], "-q") == 0)
 		{
 			i++;
-			regex rgx("^1(0|1)*1$");
-			string spaced_qmer(argv[i]);
-			if(regex_match(spaced_qmer, rgx))
+			vector<string> lines;
+			string pathQmers(argv[i]);
+			if(getLines(pathQmers, lines))
 			{
-				cerr<<endl<<"Please enter -q parameter with 1 at begin and end of the string. "
-						"Ex. 1**1*11*1. 1 is the simbol considered, any others are like *"<<flush;
-				return 0;
+				vector<bool> correctQmer(lines.size(), false);
+				regex rgx("^1(0|1)*1$");
+				for(size_t i = 0; i < lines.size(); i++)
+				{
+					correctQmer[i] = regex_match(lines[i], rgx);
+					if(!correctQmer[i])
+					{
+						cerr<<endl<<"Error on " << to_string(i+1) << " q-mers. Enter q-mer with 1 at begin and end of the string on input files. "
+						"Ex. 1**1*11*1. 1 is the simbol considered, any others are not valid simbols"<<flush;
+						return 0;
+					}
+					else
+						param.addSpacedQmer(lines[i], lines[i]);
+				}
 			}
 			else
-				param.addSpacedQmer(spaced_qmer, spaced_qmer);
+			{
+				cerr<<endl<<"Please enter a spaced seeds path as -q <AbsPathFile>. Every file's line must contain a spaced qmer."<<flush;
+				return 0;
+			}
 		}
 		else if(strcmp(argv[i], "-dirO") == 0)
 		{
@@ -58,8 +72,25 @@ int main(int argc, char* argv[]) {
 				dir_output = argv[i];
 		}
 	}
+	if(param.getVSpaced().empty())//Applied default
+	{
+		param.addSpacedQmer("CLARK-S", "1111011101110010111001011011111");
+		param.addSpacedQmer("CLARK-S", "1111101011100101101110011011111");
+		param.addSpacedQmer("CLARK-S", "1111101001110101101100111011111");
+		param.addSpacedQmer("rasbhari_minimizing_overlap_complexity", "1111010111010011001110111110111");
+		param.addSpacedQmer("rasbhari_minimizing_overlap_complexity", "1110111011101111010010110011111");
+		param.addSpacedQmer("rasbhari_minimizing_overlap_complexity", "1111101001011100111110101101111");
+		param.addSpacedQmer("rasbhari_maximizing_sensitivity", "1111011110011010111110101011011");
+		param.addSpacedQmer("rasbhari_maximizing_sensitivity", "1110101011101100110100111111111");
+		param.addSpacedQmer("rasbhari_maximizing_sensitivity", "1111110101101011100111011001111");
+		cout << endl << "Applied default spaced seed" << flush;
+	}
 	//Creo cartella output se non presente
 	createDirAndSubDir(dir_output);
+
+	cout << endl << "Applied the following spaced seed..." << flush;
+	for(size_t i = 0; i < param.getVSpaced().size(); i++)
+		cout << endl << "Type:" << param.getVSpaced()[i].first << ", Spaced seed: " << param.getVSpaced()[i].second.toString() << flush;
 
 	bool single_test_equals = false;
 	string dir_output_1 = dir_output + "single/";

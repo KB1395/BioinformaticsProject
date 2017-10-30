@@ -21,6 +21,7 @@ Hochiminh City Univeristy of Technology
 using namespace std;
 
 bool file_exist(string& path);
+bool getLines(string& path, vector<string>& line);
 void createDirAndSubDir(string path);
 void parseLine(string line, vector<string>& lineV, vector<string> delimiter);
 string LCSubstr(const string& x, const string& y);

@@ -19,6 +19,20 @@ bool file_exist(string& path)
     return ret;
 }
 
+bool getLines(string& path, vector<string>& lines) {
+	ifstream infile(path);
+	if(infile.is_open())
+	{
+		string line = "";
+		while(getline(infile, line))
+			lines.push_back(line);
+		infile.close();
+		return true;
+	}
+	else
+		return false;
+}
+
 void createDirAndSubDir(string path) {
 	string dir = "";
 	string delimiter = "/";

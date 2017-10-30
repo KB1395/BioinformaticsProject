@@ -46,7 +46,16 @@ correct manner.
 **-si** File path single-end reads  
 **-pi** File paths paired-end reads   
 **-dirO** Path directory output files. Default: output/  
-**-q** Spaced qmer used for overlapping reads. Ex. 1\*\*\*1\*111. 1 is the simbol considered, any others are like *. Default: 111111111111111111111111111111  
+**-q** Enter a spaced seeds path as -q <AbsPathFile>. Every file's line must contain a spaced qmer. Spaced qmer used for overlapping reads. Ex. 1\*\*\*1\*111. 1 is the simbol considered, any others are not valid. Default spaced seeds are:  
+1111011101110010111001011011111 -> CLARK-S paper  
+1111101011100101101110011011111 -> CLARK-S paper  
+1111101001110101101100111011111 -> CLARK-S paper  
+1111010111010011001110111110111 -> rasbhari minimizing overlap complexity  
+1110111011101111010010110011111 -> rasbhari minimizing overlap complexity  
+1111101001011100111110101101111 -> rasbhari minimizing overlap complexity  
+1111011110011010111110101011011 -> rasbhari maximizing sensitivity  
+1110101011101100110100111111111 -> rasbhari maximizing sensitivity  
+1111110101101011100111011001111 -> rasbhari maximizing sensitivity  
 
 #Run
 Calls algorithm where is compiled:  

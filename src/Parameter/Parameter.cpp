@@ -16,7 +16,7 @@ bool FileParameter::init(string pathFile1, string pathFile2) {
 }
 
 void FileParameter::addSpacedQmer(string nametype, string spaced) {
-	this->spaced_seed.push_back(make_pair(nametype, SpacedQmer(spaced)));
+	this->spaced_seed.push_back(make_pair(nametype+"/", SpacedQmer(spaced)));
 }
 
 const PairFiles& FileParameter::getInputFiles() const {
