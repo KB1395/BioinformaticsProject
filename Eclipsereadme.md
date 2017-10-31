@@ -18,7 +18,8 @@ CPP compiler options: -std=c++0x -O3 -Wall -c -fmessage-length=0 (-fopenmp optio
 Dialect: -std=c++0x  
 
 #Download
-*NB:This software tests only the computation time and give the results in files*
+*NB:This software tests only the computation time and give the results in files*  
+[FSH_download](https://bitbucket.org/samu661/fsh/downloads/FSH.tar.gz)  
 
 ##Compilation:
 Open terminal and go to FSH/Release/ and then:  

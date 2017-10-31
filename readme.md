@@ -11,7 +11,8 @@ In our experiments, FSH can compute the hashing values of spaced seeds with a sp
 Spaced seed hashing is a routine task for several bioinformatics application. FSH allows to perform this task efficiently. This has the potential of major impact in the field, making spaced seed applications not only accurate, but also faster and more efficient.  
 
 #Download
-*NB:This software tests only the computation time and give the results in files*
+*NB:This software tests only the computation time and give the results in files*  
+[FSH_download](https://bitbucket.org/samu661/fsh/downloads/FSH.tar.gz)  
 
 ##Compilation:
 Open terminal and go to FSH/Release/ and then:  
