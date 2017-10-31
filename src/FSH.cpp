@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
 					correctQmer[i] = regex_match(lines[i], rgx);
 					if(!correctQmer[i])
 					{
-						cerr<<endl<<"Error on " << to_string(i+1) << "° q-mers. Enter q-mer with 1 at begin and end of the string on input files. "
+						cerr<<endl<<"Error on " << to_string(i+1) << "° spaced seed. Enter q-mer with 1 at begin and end of the string on input files. "
 						"Ex. 1**1*11*1. 1 is the simbol considered, any others are not valid simbols"<<flush;
 						return 0;
 					}
