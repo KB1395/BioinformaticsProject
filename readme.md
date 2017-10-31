@@ -47,7 +47,8 @@ correct manner.
 **-si** File path single-end reads  
 **-pi** File paths paired-end reads   
 **-dirO** Path directory output files. Default: output/  
-**-q** Enter a spaced seeds path as -q <AbsPathFile>. Every file's line must contain a spaced qmer. Spaced qmer used for overlapping reads. Ex. 1\*\*\*1\*111. 1 is the simbol considered, any others are not valid. Default spaced seeds are:  
+**-q** Enter a spaced seeds path as -q <AbsPathFile>. Every file's line must contain a spaced seed. Ex. 1\*\*\*1\*111. 1 is the simbol considered, any others are not valid.  
+Default spaced seeds are:  
 1111011101110010111001011011111 -> CLARK-S paper  
 1111101011100101101110011011111 -> CLARK-S paper  
 1111101001110101101100111011111 -> CLARK-S paper  
