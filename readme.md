@@ -2,9 +2,9 @@
 
 ##Description
 
-Patterns with wildcards in specified positions, namely spaced seeds, are increasingly used instead of k-mers in many bioinformatics applications that require indexing, querying and rapid similarity search, as they can provide better sensitivity. Many of these applications require to compute the encoding or the hashing of each position in the input sequences with respect to the given spaced seed, or to multiple spaced seeds. While the hashing of k-mers can be rapidly computed by exploiting the large overlap between consecutive k-mers, spaced seeds hashing is usually computed from scratch for each of the positions in the input sequence, thus resulting in slower processing.  
+Patterns with wildcards in specified positions, namely spaced seeds, are increasingly used instead of k-mers in many bioinformatics applications that require indexing, querying and rapid similarity search, as they can provide better sensitivity. Many of these applications require to compute the hashing of each position in the input sequences with respect to the given spaced seed, or to multiple spaced seeds. While the hashing of k-mers can be rapidly computed by exploiting the large overlap between consecutive k-mers, spaced seeds hashing is usually computed from scratch for each of the positions in the input sequence, thus resulting in slower processing.  
   
-Fast Spaced-seed Hashing (FSH), exploits the similarity of the hash values of spaced seeds computed at adjacent positions in the input sequence, similarly to rolling hash. We also propose a generalized version of the algorithm for the simultaneous computation of multiple spaced seeds hashing.  
+Fast Spaced-seed Hashing (FSH), exploits the similarity of the hash values of spaced seeds computed at adjacent positions in the input sequence. We also propose a generalized version of the algorithm for the simultaneous computation of multiple spaced seeds hashing.  
   
 In our experiments, FSH can compute the hashing values of spaced seeds with a speedup,  with respect to the traditional approach, between 1.6x to 5.3x, depending on the structure of the spaced seed.  
   
