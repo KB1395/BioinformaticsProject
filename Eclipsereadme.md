@@ -44,7 +44,7 @@ Structure .fastq exemple:
 > +  
 > HBIIIIIIIHHDIHIGIIGGIHIIGIDIIIIBIHI@IIH@HIIHIIF5IIHEII>BDAHIBIEDBEIDG@HAEH*I@AEI=#CE?G17EEDHDEB@@?#8B  
   
-In this NEW VERSION, paired-end reads are passed to the algorithm in separeted file in which the reads are paired 
+In this VERSION, paired-end reads are passed to the algorithm in separeted file in which the reads are paired 
 in the same order in which are writen. So we raccomend to control the paired-end read if they are paired in the
 correct manner.
 

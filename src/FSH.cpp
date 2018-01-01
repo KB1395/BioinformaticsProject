@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : HashTest.cpp
+// Name        : FSH.cpp
 // Author      : Samuele Girotto
 // Version     :
 // Copyright   : 

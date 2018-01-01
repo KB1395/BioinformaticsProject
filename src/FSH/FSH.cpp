@@ -253,7 +253,7 @@ void FSH::multi_test_equals(const vector<SpacedQmer>& multi_spaced) {
 	{
 		GetHashes_speedup_multi_previous_Rotated(this->to_hash[i], this->spaced_qmers, vHashes_multi_previous, CharToInt);
 		for(size_t j = 0; j < multi_spaced.size(); ++j)
-			GetHashes_speedup_previous(this->to_hash[i], multi_spaced[j], vHashes_single[j], CharToInt);
+			GetHashes_naive(this->to_hash[i], multi_spaced[j], vHashes_single[j], CharToInt);
 
 		for(size_t j = 0; j < multi_spaced.size(); ++j)
 		{
