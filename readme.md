@@ -61,6 +61,6 @@ Default spaced seeds are:
 
 #Run
 Calls algorithm where is compiled:  
-./FSH -si ../TestInputFile/long_example_1.fna -q 11101110110110111101
+./FSH -si ../TestInputFile/long_example_1.fna -q 11101110110110111101  
 ./FSH -pi ../TestInputFile/short_example_1.fna.1 ../TestInputFile/short_example_1.fna.2 -q 11101110110110111101  
 ./FSH -pi ../TestInputFile/short_example_2.fna.1 ../TestInputFile/short_example_2.fna.2 -q 11101110110110111101 .dirO /home/user/desktop/  
